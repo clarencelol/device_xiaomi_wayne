@@ -30,10 +30,6 @@ $(call inherit-product, vendor/ssos/config/common_full_phone.mk)
 # Define first api level
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 
-# Build Fingerprint
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="wayne-user 9 PKQ1.180904.001 V10.3.4.0.PDCCNXM release-keys"
-
 # Density
 TARGET_SCREEN_DENSITY := 400
 
