@@ -99,7 +99,7 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product, vendor/xiaomi/wayne-common/wayne-common-vendor.mk)
 
 # DEVICE
-PRODUCT_NAME := ssos_wayne
+PRODUCT_NAME := fluid_wayne
 PRODUCT_DEVICE := wayne
 PRODUCT_MODEL := Mi 6X
 PRODUCT_BRAND := Xiaomi

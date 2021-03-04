@@ -24,8 +24,8 @@
 # Inherit device configuration
 $(call inherit-product, device/xiaomi/wayne/device.mk)
 
-# Inherit ShapeShiftOS product configuration
-$(call inherit-product, vendor/ssos/config/common_full_phone.mk)
+# Inherit Project Fluid product configuration
+$(call inherit-product, vendor/fluid/config/common_full_phone.mk)
 
 # Define first api level
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
@@ -40,19 +40,19 @@ TARGET_SCREEN_DENSITY := 400
 # Device identifier
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_NAME := ssos_wayne
+PRODUCT_NAME := fluid_wayne
 PRODUCT_DEVICE := wayne
 PRODUCT_MODEL := MI 6X
 
-# Inherit ShapeShiftOS Official build stuff.
-SSOS_BUILD_TYPE := OFFICIAL
-TARGET_FACE_UNLOCK_SUPPORTED := true
 TARGET_BOOT_ANIMATION_RES := 1080
 
 PRODUCT_PRODUCT_PROPERTIES += \
-  ro.ssos.cpu=SDM660
+  ro.fluid.maintainer=Clarence \
+  ro.fluid.cpu=SDM660
 
 # Gapps
-USE_GAPPS := true
 IS_PHONE := true
 TARGET_GAPPS_ARCH := arm64
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+
+PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
