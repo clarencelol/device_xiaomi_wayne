@@ -21,11 +21,11 @@
 # definition file).
 #
 
-# inherit device config for Project-Awaken
+# inherit device config for ShapeShiftOS
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_wayne.mk
+    $(LOCAL_DIR)/ssos_wayne.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_wayne-eng \
-    lineage_wayne-userdebug \
-    lineage_wayne-user
+    ssos_wayne-eng \
+    ssos_wayne-userdebug \
+    ssos_wayne-user
