@@ -19,10 +19,8 @@
 # Inherit device configuration
 $(call inherit-product, device/xiaomi/wayne/device.mk)
 
-# Inherit some common stuff from Project-Awaken
-AWAKEN_BUILD_TYPE := OFFICIAL
-$(call inherit-product, vendor/awaken/config/common.mk)
-$(call inherit-product, vendor/awaken/config/gsm.mk)
+# Inherit ShapeShiftOS product configuration
+$(call inherit-product, vendor/ssos/config/common_full_phone.mk)
 
 # Gapps
 USE_GAPPS := true
@@ -32,18 +30,32 @@ TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_SUPPORTS_STOCK_ARCORE := true
 TARGET_INCLUDE_LIVE_WALLPAPERS := true
 
+PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
 # Define first api level
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 
-# Build Description
+# Build Fingerprint
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="wayne-user 9 PKQ1.180904.001 V10.3.4.0.PDCCNXM release-keys"
+    PRIVATE_BUILD_DESC="redfin-user 11 RQ3A.210705.001 7380771 release-keys" \
+    BUILD_FINGERPRINT="google/redfin/redfin:11/RQ3A.210705.001/7380771:user/release-keys"
+
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.build.fingerprint=$(BUILD_FINGERPRINT)
 
 # Device identifier
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_NAME := awaken_wayne
+PRODUCT_NAME := ssos_wayne
 PRODUCT_DEVICE := wayne
 PRODUCT_MODEL := MI 6X
+
+# Inherit ShapeShiftOS Official build stuff.
+SSOS_BUILD_TYPE := OFFICIAL
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_BOOT_ANIMATION_RES := 1080
+
+PRODUCT_PRODUCT_PROPERTIES += \
+  ro.ssos.cpu=SDM660

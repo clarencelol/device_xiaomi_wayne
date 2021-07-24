@@ -1,8 +1,0 @@
-[
-  {
-    "remote"      : "github",
-    "repository"  : "OdSazib/device_xiaomi_wayne-common",
-    "target_path" : "device/xiaomi/wayne-common",
-    "branch"      : "11"
-  }
-]
