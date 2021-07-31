@@ -37,13 +37,14 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_o_mr1.mk)
 
-# Build Fingerprint
+# Build Description
 PRODUCT_BUILD_PROP_OVERRIDES += \
     PRIVATE_BUILD_DESC="redfin-user 11 RQ3A.210705.001 7380771 release-keys" \
-    BUILD_FINGERPRINT="google/redfin/redfin:11/RQ3A.210705.001/7380771:user/release-keys"
+    PRODUCT_NAME="wayne" \
+    TARGET_DEVICE="wayne"
 
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.build.fingerprint=$(BUILD_FINGERPRINT)
+# Build Fingerprint
+BUILD_FINGERPRINT := "google/redfin/redfin:11/RQ3A.210705.001/7380771:user/release-keys"
 
 # Device identifier
 PRODUCT_BRAND := Xiaomi
