@@ -11,8 +11,5 @@ include device/xiaomi/wayne-common/BoardConfigCommon.mk
 # Device Path
 DEVICE_PATH := device/xiaomi/wayne
 
-# Properties
-TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
-
 # Toolbox
 TW_USE_TOOLBOX := true
